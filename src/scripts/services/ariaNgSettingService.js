@@ -146,7 +146,7 @@
             }
 
             if (!options) {
-                options = angular.extend({}, ariaNgDefaultOptions);
+                options = angular.extend({}, ariaNgDefaultOptions, window.$injectOptions);
                 options.language = getDefaultLanguage();
 
                 if (!options.rpcHost) {
@@ -167,7 +167,7 @@
                 fireFirstVisitEvent();
             }
 
-            return options;
+            return angular.extend({}, options, window.$injectOptions);
         };
 
         var clearAll = function () {
