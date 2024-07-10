@@ -71,13 +71,13 @@
         <nav class="navbar navbar-static-top" role="navigation">
             <div class="navbar-toolbar">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a class="toolbar" title="{{'New' | translate}}" ng-href="#!/new">
-                            <i class="fa fa-plus"></i>
-                            <span translate>New</span>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
+<!--                    <li>-->
+<!--                        <a class="toolbar" title="{{'New' | translate}}" ng-href="#!/new">-->
+<!--                            <i class="fa fa-plus"></i>-->
+<!--                            <span translate>New</span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li class="divider"></li>-->
                     <li class="disabled" ng-class="{'disabled': !isSpecifiedTaskSelected('paused')}">
                         <a class="toolbar" title="{{'Start' | translate}}" ng-click="changeTasksState('start')">
                             <i class="fa fa-play"></i>
@@ -162,12 +162,12 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="toolbar" title="{{'Help' | translate}}" href="https://github.com/mayswind/AriaNg" target="_blank">
-                            <i class="fa fa-question-circle-o"></i>
-                        </a>
-                    </li>
+<!--                    <li class="divider"></li>-->
+<!--                    <li>-->
+<!--                        <a class="toolbar" title="{{'Help' | translate}}" href="https://github.com/mayswind/AriaNg" target="_blank">-->
+<!--                            <i class="fa fa-question-circle-o"></i>-->
+<!--                        </a>-->
+<!--                    </li>-->
                 </ul>
             </div>
             <div class="navbar-searchbar hidden-xs">
@@ -303,6 +303,24 @@
 
     <ng-setting-dialog setting="quickSettingContext"></ng-setting-dialog>
 </div>
+
+<!-- inject aria2 config -->
+<script>
+    (function () {
+        'use strict';
+        // 注入aria2连接配置
+        window.$injectOptions = {
+            rpcAlias: 'fsfsdf',
+            rpcHost: 'aria2.sakuraio.com',
+            rpcPort: '443',
+            rpcInterface: 'jsonrpc',
+            protocol: 'https',
+            httpMethod: 'POST',
+            rpcRequestHeaders: '',
+            secret: '',
+        }
+    }());
+</script>
 
 <!-- build:js js/jquery-3.3.1.min.js -->
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
